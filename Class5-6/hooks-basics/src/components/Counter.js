@@ -13,6 +13,11 @@ export const Counter = () => {
         console.log('Updated');
     })
 
+    // Component updated - when count is changing
+    useEffect(() => {
+        console.log('Updated');
+    }, [count]);
+
     // Unmounting
     useEffect(() => {
         return () => {
