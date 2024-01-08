@@ -1,0 +1,45 @@
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>DOM example</title>
+    <style>
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="dinosaur.png" alt="A red Tyrannosaurus Rex." />
+      <p>
+        Here we will add a link to the
+        <a href="https://www.mozilla.org/">Mozilla homepage</a>
+      </p>
+      <div id="host"></div>
+      <span>I'm not in the shadow DOM</span>
+
+      <button id="upper" type="button">
+        Uppercase shadow DOM span elements
+      </button>
+      <button id="reload" type="button">Reload</button>
+    </section>
+    <script>
+      const host = document.querySelector("#host");
+      const shadow = host.attachShadow({ mode: "open" });
+      const span = document.createElement("span");
+      span.textContent = "I'm in the shadow DOM";
+      shadow.appendChild(span);
+
+      const upper = document.querySelector("button#upper");
+      upper.addEventListener("click", () => {
+        const spans = Array.from(document.querySelectorAll("span"));
+        for (const span of spans) {
+          span.textContent = span.textContent.toUpperCase();
+        }
+      });
+
+      const reload = document.querySelector("#reload");
+      reload.addEventListener("click", () => document.location.reload());
+    </script>
+  </body>
+</html>
