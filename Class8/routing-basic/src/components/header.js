@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <nav>
+        <nav className="header">
         {/* <a href='/'>Home</a>
         <a href='/page1'>Page1</a>
         <a href='/page2'>Page2</a> */}

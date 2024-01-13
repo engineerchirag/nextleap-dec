@@ -3,39 +3,46 @@ import './App.css';
 import PageTabs from './components/tabs';
 import {
   createBrowserRouter,
+  createHashRouter,
   Link,
   RouterProvider,
 } from "react-router-dom";
 import Page1 from './pages/page1';
 import Page2 from './pages/page2';
 import Header from './components/header';
+import LoginForm from './pages/Login';
+import RegisterForm from './pages/Register';
+import PageWithHeader from './layouts/PageWithHeader';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <Header />
-        <div>Hello world!</div>
+        <div>Welcome to twitter!</div>
       </>
     ),
   },
   {
-    path: "/page1",
+    path: "/signin",
     element: (
       <>
-        <Header />
-        <Page1 />
+        <LoginForm />
       </>
     ),
   },
   {
-    path: "/page2",
+    path: "/register",
     element: (
       <>
-        <Header />
-        <Page2 />
+        <RegisterForm />
       </>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <PageWithHeader />
     ),
   }
 ]);
