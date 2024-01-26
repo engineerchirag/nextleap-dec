@@ -1,0 +1,20 @@
+{
+  "name": "new-pretty-console",
+  "version": "1.0.0",
+  "description": "\"Package to beautify console log\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ./main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "\"Pretty",
+    "Console",
+    "Beauty\""
+  ],
+  "author": "\"Chirag Goel\"",
+  "license": "ISC",
+  "dependencies": {
+    "beautiful-console": "^1.0.5"
+  }
+}
